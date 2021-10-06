@@ -4,6 +4,10 @@ module.exports = class Queue {
     this.head = head;
   }
 
+  getHead() {
+    return this.head;
+  }
+
   isEmpty() {
     return this.items.length === 0;
   }

@@ -13,4 +13,11 @@ Basically, we use them to organize different types of data for different purpose
 
 This means that we use them every time we do Computer Science, even that you do not notice.
 
+
+## Running
+
+```shell
+node ./<ds>/<file>.js
+```
+
 Cheers 🍻
