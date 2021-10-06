@@ -23,6 +23,8 @@ function isBalanced(text) {
   }
 
   if (stack.isEmpty()) return true;
+
+  return false;
 }
 
 print_results(
@@ -34,6 +36,7 @@ print_results(
   `, 
   [
     '{}',
+    '{',
     '[{}]',
     '{[}]',
     '[{}}]',
