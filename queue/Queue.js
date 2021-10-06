@@ -1,7 +1,7 @@
 module.exports = class Queue {
-  constructor(items = [], head = null) {
+  constructor(items = []) {
     this.items = items;
-    this.head = head;
+    this.head = this.items[0];
   }
 
   getHead() {
