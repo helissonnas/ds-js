@@ -109,8 +109,8 @@ module.exports = class LinkedList {
     return this.head;
   }
 
-  toSring() {
-    let result = ` ${this.head ? this.head.data : null} `;
+  toString() {
+    let result = `${this.head ? this.head.data : null}`;
     let curr = this.head ? this.head.next : null;
 
     while(curr) {

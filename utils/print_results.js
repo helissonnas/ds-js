@@ -6,7 +6,7 @@
  */
 function print_results(question, testCases, fun) {
   console.log(question);
-  testCases.forEach(arr => console.log(`Input: ${arr} --- Output: ${fun(arr)}`));
+  testCases.forEach(arr => console.log(`Input: ${arr.toString()} --- Output: ${fun(arr).toString()}`));
 }
 
 module.exports = print_results;
