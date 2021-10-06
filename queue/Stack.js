@@ -1,7 +1,7 @@
 module.exports = class Stack {
-  constructor(items = [], top = null) {
+  constructor(items = []) {
     this.items = items;
-    this.top = top;
+    this.top = this.items[this.items.length - 1];
   }
 
   getTop() {

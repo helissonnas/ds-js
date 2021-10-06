@@ -10,7 +10,7 @@ test_output(`return A after dequeue: ${q.items}`, 'A', removed);
 q.enqueue('D');
 test_output(`enqueue D: ${q.items}`, 'D', q.items[q.items.length - 1]);
 
-q.dequeue()
-q.dequeue()
-q.dequeue()
+q.dequeue();
+q.dequeue();
+q.dequeue();
 test_output(`return empty: ${q.items}`, true, q.isEmpty());
