@@ -19,8 +19,10 @@ module.exports = class Stack {
 
   pop() {
     if (!this.isEmpty()) {
-      this.items.pop();
-      this.top = this.items[this.items.length - 1];
+      this.top = this.items[this.items.length - 2];
+      return this.items.pop();
     }
+
+    return null;
   }
 };
