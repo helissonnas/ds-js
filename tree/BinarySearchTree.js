@@ -5,17 +5,5 @@ module.exports = class BinarySearchTree {
     this.root = new Node(rootValue);
   }
 
-  insert(value) {
-    if (this.root.itsLeaf()) {
-      this.root.appendChild(value);
-      
-      return this;
-    }
-
-    if (this.root.value < value) {
-      
-    } else {
-      
-    }
-  }
+  
 };

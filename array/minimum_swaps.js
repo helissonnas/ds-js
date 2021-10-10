@@ -8,7 +8,7 @@ function minimumSwap(arr) {
 
   while (i < n) {
     if (arr[i] !== i+1) {
-      const idx = arr[i] - 1;    
+      const idx = arr[i] - 1;
       aux = arr[idx];
       arr[idx] = arr[i];
       arr[i] = aux;
