@@ -29,4 +29,10 @@ test_output(`print ${expectedTree} (pre order)`, expectedTree, bst.toString('pre
 expectedTree = ' 2 -> 4 -> 3 -> 6 -> 8 -> 7 -> 5 ->';
 test_output(`print ${expectedTree} (post order)`, expectedTree, bst.toString('postOrder'));
 
+test_output(`did show the right heigth (2)`, 2, bst.height());
+
+bst.insert(10)
+test_output(`did show the right heigth (3)`, 3, bst.height());
+
+
 

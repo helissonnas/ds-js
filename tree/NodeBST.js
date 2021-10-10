@@ -6,10 +6,6 @@ module.exports = class NodeBST {
     this.value = value;
     this.left = left;
     this.right = right;
-
-    this.insert = this.insert.bind(this);
-    this.find = this.find.bind(this);
-    this.inOrder = this.inOrder.bind(this);
   }
 
   insert(value) {
@@ -94,6 +90,18 @@ module.exports = class NodeBST {
     }
 
     return result + ` ${this.value} ->`;
+  }
+
+  height() {
+    if (this.itsLeaf()) {
+      return 0;
+    } else {
+      
+      const leftHeight = this.left ? this.left.height() : 0;
+      const rightHeight = this.right ? this.right.height() : 0;
+      
+      return Math.max(leftHeight, rightHeight) + 1;
+    }
   }
 
   itsLeaf() {
