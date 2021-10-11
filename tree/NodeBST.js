@@ -9,19 +9,69 @@ module.exports = class NodeBST {
   }
 
   insert(value) {
-    if (value <= this.value) {
+    const node = new NodeBST(value);
+
+    this._insertNode(node);
+  }
+
+  _insertNode(node) {
+    if (node.value <= this.value) {
       if (this.left) {
-        this.left.insert(value);
+        this.left._insertNode(node);
       } else {
-        this.left = new NodeBST(value);
+        this.left = node;
       }
     } else {
       if (this.right) {
-        this.right.insert(value);
+        this.right._insertNode(node);
       } else {
-        this.right = new NodeBST(value);
+        this.right = node;
       }
     }
+  }
+
+  delete(value, parent) {
+    if (!value) {
+      return null
+    } else if (value === this.value) {
+      return this._replace(parent);
+    } else if (value < this.value) {
+      return this.left ? this.left.delete(value, this) : null;
+    } else {
+      return this.right ? this.right.delete(value, this) : null;
+    }
+  }
+
+  _replace(parent) {
+    const left = this.left;
+
+    if (this.itsLeaf()) {
+      if (this.value <= parent.value) {
+        parent.left = null;
+      } else {
+        parent.right = null;
+      }
+    } else if (this.right) {
+      this.value = this.right.value;
+      this.left = this.right.left;
+      this.right = this.right.right;
+      
+      this._insertNode(left);
+    } else {
+      this.value = this.left.value;
+      this.left = this.left.left;
+      this.right = this.left.right;
+    }
+
+    return this;
+  }
+
+  min() {
+
+  }
+
+  max() {
+
   }
 
   find(value) {
@@ -96,7 +146,6 @@ module.exports = class NodeBST {
     if (this.itsLeaf()) {
       return 0;
     } else {
-      
       const leftHeight = this.left ? this.left.height() : 0;
       const rightHeight = this.right ? this.right.height() : 0;
       

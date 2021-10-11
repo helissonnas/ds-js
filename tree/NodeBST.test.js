@@ -34,5 +34,12 @@ test_output(`did show the right heigth (2)`, 2, bst.height());
 bst.insert(10)
 test_output(`did show the right heigth (3)`, 3, bst.height());
 
+bst.delete(10);
+expectedTree = ' 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 ->';
+test_output(`delete 10`, expectedTree, bst.toString());
+
+bst.delete(7);
+expectedTree = ' 2 -> 3 -> 4 -> 5 -> 6 -> 8 ->';
+test_output(`delete 7`, expectedTree, bst.toString());
 
 
