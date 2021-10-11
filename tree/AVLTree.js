@@ -1,9 +1,8 @@
 const NodeBST = require('./NodeBST');
 
 module.exports = class AVLTree extends NodeBST {
-  constructor(value, left, right) {
+  constructor() {
     super(...arguments);
-    
     this.height = 0;
   }
 
